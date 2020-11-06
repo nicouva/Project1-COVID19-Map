@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body>
 
-  <h1>Hello</h1>
-  
+<body>
+  <div id="covidTracker"></div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script>
+
+    axios.get('https://corona.lmao.ninja/v2/jhucsse/counties')
+      .then(res => {
+
+        let tracker = res.data
+        console.log(tracker)
+
+      })
+  </script>
+
+
 </body>
+
 </html>
