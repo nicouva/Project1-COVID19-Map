@@ -6,8 +6,8 @@ mapboxgl.accessToken = mapbox_token;
 var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/streets-v10',
-  center: [0, 20],
-  zoom: 1.5
+  center: [-95, 40],
+  zoom: 2
 });
 
 
