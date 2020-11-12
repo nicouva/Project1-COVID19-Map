@@ -255,7 +255,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoid2xpbnRvbjEiLCJhIjoiY2toY2QxZjN1MDBicDM1cXQ3b
 var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/dark-v10',
-  center: [-20, 25],
+  center: [50, 35],
   zoom: 1.2,
   scrollZoom: true
 });
@@ -398,7 +398,7 @@ function buildLocationList(data) {
     link.innerHTML = prop.country;
 
     var details = listing.appendChild(document.createElement('div'));
-    details.innerHTML += 'TotalConfirmed: <span style="color:red;">' + prop.TotalConfirmed.toLocaleString('en-US') + '</span>  TotalDeaths: <span style="color:red;">' + prop.TotalDeaths.toLocaleString('en-US') + '</span>';
+    details.innerHTML += 'TotalConfirmed: <span class="highlightedText">' + prop.TotalConfirmed.toLocaleString('en-US') + '</span>  TotalDeaths: <span class="highlightedText">' + prop.TotalDeaths.toLocaleString('en-US') + '</span>';
 
     link.addEventListener('click', function (e) {
       for (var i = 0; i < data.features.length; i++) {
