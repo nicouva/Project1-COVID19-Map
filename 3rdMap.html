@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8' />
+  <title>Mapbox Boundaries Tutorial</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <!-- Import Mapbox GL JS -->
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id='map'></div>
+  <script>
+    // Be sure to use a token from an account that has access to Boundaries
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZ3JlZy1zYW0iLCJhIjoiY2toY2JmZGNrMDNrcDJ0bzJhOGtjbWhhaiJ9.SkxQG0ZAOSyPUkh8pmThnQ';
+
+    var map = new mapboxgl.Map({
+      container: 'map', // The container ID
+      style: 'mapbox://styles/mapbox/light-v10', // The map style to use
+      center: [-99.9, 45.1], // Starting position [longitude, latitude]
+      zoom: 2 // Starting zoom level
+    });
+
+    map.on('load', function () {
+
+        // Add source for admin-1 Boundaries
+        map.addSource('admin-1', {
+          type: 'vector',
+          url: 'mapbox://mapbox.boundaries-adm1-v3'
+        });
+
+        // Add a layer with boundary polygons
+        map.addLayer(
+          {
+            id: 'admin-1-fill',
+            type: 'fill',
+            source: 'admin-1',
+            'source-layer': 'boundaries_admin_1',
+            paint: {
+              'fill-color': '#CCCCCC'
+            }
+          },
+          // This final argument indicates that we want to add the Boundaries layer
+          // before the `waterway-label` layer that is in the map from the Mapbox
+          // Light style. This ensures the admin polygons will be rendered on top of
+          // the
+          'waterway-label'
+        );
+      });
+  </script>
+
+</body>
+
+</html>

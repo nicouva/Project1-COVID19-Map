@@ -4,85 +4,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+  <script type="text/javascript" charset="utf8"
+    src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <title>Project 1</title>
 </head>
 
 <body>
-<a href="./mapBoxSandBox.html">map box sandbox with us population density</a>
 
+  <div style="width: 100%;">
+    <div class='sidebar'>
+      <div class='heading'>
+        <h1>All Countries 
+        </h1>
+        <p id='worldCases'></p>
+        <p id='worldDeaths'></p>
+      </div>
+      <div class="subhead">
+                
+      </div>
+      <div id='listings' class='listings'></div>
+    </div>
+    <div id='map' class='l9 map'></div>
+  </div>
+  <div class=container>
+    <table id="covid_table" class="table table-bordered hover">
+      <thead>
+        <tr>
+          <td>Country</td>
+          <td>TotalConfirmed</td>
+          <td>TotalDeaths</td>
+          <td>NewConfirmed</td>
+          <td>NewDeaths</td>
+          <td>NewRecovered</td>
+          <td>TotalRecovered</td>
+        </tr>
+      </thead>
+    </table>
+  </div>
 
-  <div id="covidTracker"></div>
-  
-  <form>
-    <p>
-      <label for="search">County</label>
-      <input type="text" name="search" id="countySearch">
-    </p>
-   
-    <p>
-      <label for="search">State</label>
-      <input type="text" name="search" id="stateSearch">
-    </p>
-    <p>
-      <button id="btn">Search</button>
-    </p>
-  </form>
-
-  <h1 id="county"></h1>
-  <h2 id="caseRate"></h2>
-
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-  crossorigin="anonymous"></script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-<script src="assets/countyCensus.js"></script>
-<script>
-  document.getElementById('btn').addEventListener('click', event => {
-      event.preventDefault()
-
-      let searchC = document.getElementById('countySearch').value
-      let searchS = document.getElementById('stateSearch').value
-
-  
-  countyPop.forEach(county => {
-    if (county.County === searchC && county.State === searchS){
-      pop = county.Population
-      console.log(pop)
-    }
-  })
- 
-    axios.get('https://corona.lmao.ninja/v2/jhucsse/counties')
-      .then(res => {
-
-        let tracker = res.data
-        // console.log(tracker)
-        
-        tracker.forEach(county => {
-          if (county.county === searchC && county.province === searchS){
-            cases = county.stats.confirmed
-            console.log(cases)
-          }
-        })
-        
-        console.log(cases)
-        rate = cases/pop*100000
-        // console.log(rate)
-        document.getElementById('county').innerHTML = `${searchC} county, ${searchS}`
-
-        document.getElementById('caseRate').innerHTML = `${rate} cases per 100,000 people`
-
-
-        document.getElementById('stateSearch').value = ''
-        document.getElementById('countySearch').value = ''
-
-      }) 
-  })
- 
- 
-
-</script>
+  <script src="script.js"></script>
 </body>
 
 </html>
