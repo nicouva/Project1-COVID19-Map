@@ -398,7 +398,7 @@ function buildLocationList(data) {
     link.innerHTML = prop.country;
 
     var details = listing.appendChild(document.createElement('div'));
-    details.innerHTML += 'TotalConfirmed: <span style="color:red;">' + prop.TotalConfirmed + '</span>  TotalDeaths: <span style="color:red;">' + prop.TotalDeaths + '</span>';
+    details.innerHTML += 'TotalConfirmed: <span style="color:red;">' + prop.TotalConfirmed.toLocaleString('en-US') + '</span>  TotalDeaths: <span style="color:red;">' + prop.TotalDeaths.toLocaleString('en-US') + '</span>';
 
     link.addEventListener('click', function (e) {
       for (var i = 0; i < data.features.length; i++) {
@@ -433,21 +433,4 @@ function createPopUp(currentFeature) {
     .addTo(map);
 }
 
-// var markerRed = new mapboxgl.Marker({
-//   color: "red"
-// })
-//   .setLngLat([0, 0])
-//   .addTo(map);
-
-// var markerOrange = new mapboxgl.Marker({
-//   color: "orange"
-// })
-//   .setLngLat(0, 10)
-//   .addTo(map);
-
-// var markerBlue = new mapboxgl.Marker({
-//   color: "blue"
-// })
-//   .setLngLat([0, -10])
-//   .addTo(map);
 
