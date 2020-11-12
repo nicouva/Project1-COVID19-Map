@@ -11,22 +11,35 @@ var map = new mapboxgl.Map({
 });
 
 
-fetch("/covidex.json")
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
+document.getElementById('submit').addEventListener('click', function () {
+  fetch("/covidex.json")
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      let countryName = document.getElementById('searchCountry').value 
+        for (i = 0; i < country.length; i ++) {
+          if (countryName === country.country) {
+            
+           return
+          }
+        }
+        
+      //const { country, cases } = data;
+      //console.log(cases)
 
-    //const { country, cases } = data;
-    //console.log(cases)
+      //cases.filter(case)
+      //.forEach(cases => {
+      //console.log(cases);
+      //})
 
-    //cases.filter(case)
-    //.forEach(cases => {
-    //console.log(cases);
-    //})
+      data.forEach(country => {
+        console.log(country.country)
 
-    data.forEach(country =>
-      console.log(country.country))
+      })
 
-    data.forEach(country =>
-      console.log(country.cases))
-  });
+      data.forEach(country =>
+        console.log(country.cases))
+    });
+})
+
+
