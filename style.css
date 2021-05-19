@@ -57,7 +57,7 @@ figure {
   left: 33.3333%;
   right: 33.333%;
   width: 66.6666%;
-  top: 30%;
+  top: 8.5%;
   bottom: 30%;
 }
 
@@ -106,6 +106,7 @@ figure {
 
 .listings .item.active {
   background-color: #E5383B;
+  
 }
 
 ::-webkit-scrollbar {
