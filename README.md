@@ -1,21 +1,29 @@
-COVID INFORMA INITIATIVE
+# COVID INFORMA
 
-Welcome to our interactive world map, where the map updates current COVID-19 cases in real time. 
+  Interactive global map tracking COVID-19 cases in real time. Perfect for study guides, travel plans and overall way of life.
+  
+  [Check out our deployed app over on GitHub Pages!](https://nicouva.github.io/Project1-COVID19-Map/)
+ 
+  ## Contributors: 
 
-With the combined efforts of our team, available databases and sheer ingenuity and determination, we put together an informative tool that aids people in terms of travel, business and general living situations.
+  <a href="https://github.com/Greg-Sam">Greg Samuelson</a> , <a href="https://github.com/nicouva">Nicole Uva</a> , <a href="https://github.com/wlinton1">Wettim Linton</a> & <a href="https://github.com/tuckerpikula">Tucker Pikula</a> 
 
-Check out our deployed app over on GitHub Pages!
-
-Contributors:
-Wettim Linton, Greg Samuelson and Nicole Uva
-
-
-Technologies Used:
-HTML/CSS/JS API
-
-Installation
-npm init is used to install dependencies.
+  ## Screenshots:
 
 
-License:
-License: MIT (https://opensource.org/licenses/MIT)
+  ## Technologies Used:
+  HTML/CSS/JS
+  Materialize
+  MapBox API
+  COVID-19 API
+  
+
+  ## **Installation**
+  ```npm init``` is used to install dependencies.
+  ## **Usage**
+  Node.js must be installed onto your system prior to usage. 
+  Repo MUST include package.json with required dependencies.
+  
+  ## License: 
+  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+  (https://opensource.org/licenses/MIT)
