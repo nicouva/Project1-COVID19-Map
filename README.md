@@ -9,6 +9,8 @@
   <a href="https://github.com/Greg-Sam">Greg Samuelson</a> , <a href="https://github.com/nicouva">Nicole Uva</a> , <a href="https://github.com/wlinton1">Wettim Linton</a> & <a href="https://github.com/tuckerpikula">Tucker Pikula</a> 
 
   ## Screenshots:
+  ![COVIDINFORMA](https://user-images.githubusercontent.com/71464593/118864790-541dee00-b8ae-11eb-9085-ccf561ee9003.png)
+
 
 
   ## Technologies Used:
